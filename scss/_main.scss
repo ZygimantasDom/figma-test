@@ -1,0 +1,366 @@
+
+
+@mixin responsive-xxl{
+    @media screen and (max-width: 1239px) {
+        @content;
+    }
+}
+
+@mixin responsive-xl{
+    @media screen and (max-width: 1099px) {
+        @content;
+    }
+}
+
+@mixin responsive-lg{
+    @media screen and (max-width: 990px) {
+        @content;
+    }
+}
+
+@mixin responsive-md{
+    @media screen and (max-width: 860px) {
+        @content;
+    }
+}
+
+@mixin responsive-sm{
+    @media screen and (max-width: 740px) {
+        @content;
+    }
+}
+@mixin responsive-xsm{
+    @media screen and (max-width: 599px) {
+        @content;
+    }
+}
+
+main{
+    .main-content-top-wrapper{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 3.125em 0;
+        
+        @include responsive-lg{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .content-item-all{
+            @include responsive-lg{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin:0 auto;
+
+                
+                p.main-item-text{
+                    margin: 0 6.25em;
+                    padding-bottom: 1em;
+                    text-align: center;
+                }
+                .green-btn{
+                    align-self: center;
+
+                    @include responsive-lg{
+                        width: 350px;
+                    }
+                    @include responsive-xsm{
+                        width: 190px;
+                    }
+                }
+                .svg{
+                    display: none;
+                }
+            }
+            .svg{
+                position: absolute;
+                top: 20px;
+                left: -170px;
+            }
+            .main-item-text{
+                text-align: left;
+                margin-bottom: 40px;
+                margin-right: 124px;
+                line-height: 21.12px;
+            }
+
+        }
+        .main-content-item-right{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.625em;
+
+            @include responsive-lg{
+                    padding-top: 50px;
+                    margin: 0 50px;
+            }
+
+            .right-item-card{
+                padding: 20px;
+                border-radius: 10px;
+                transition: ease-in-out 0.2s;
+
+                .card-logo-wrapper{
+                    
+                    .card-logo{
+                        border-radius: 8px;
+                        padding: 8px;
+                        background-color: #FFFFFF;
+                        
+                    }
+                }
+                .card-header{
+                    font-size: 1.5rem;
+                    line-height: 27.84px;
+                    font-weight: 500;
+                    padding-top: 16px;
+                    margin: 0;
+                }
+
+                .right-item-card-text{
+                    padding-top: 6px;
+                    font-size: 0.813rem;
+                    line-height: 17.17px;
+                    font-weight: 400;
+                }
+            }
+            .right-item-card:hover{
+                border: 1px solid #66ac66;
+                -webkit-box-shadow: 16px 13px 18px -8px rgba(102,172,102,1);
+                -moz-box-shadow: 16px 13px 18px -8px rgba(102,172,102,1);
+                box-shadow: 16px 13px 18px -8px rgba(102,172,102,1);
+                background:linear-gradient(#647b64, #66ac66);
+                color: whitesmoke;
+                
+            }
+        }
+    }
+    .main-content-mid-wrapper{
+
+        @include responsive-lg{
+            margin: 0 50px;
+        }
+
+        .main-content-mid-wrapper-top{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+        }
+        
+        .main-content-mid-wrapper-middle{
+            padding-bottom: 170px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5em;
+            position: relative;
+
+            @include responsive-lg{
+                display: flex;
+                flex-direction: column;
+            }
+            .dotts-svg{
+                z-index: -1;
+                position: absolute;
+                top: 180px;
+                left: -30px;
+                    @include responsive-lg{
+                        display: none;
+                    }
+            }
+
+            .main-content-mid-card{
+                background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+                linear-gradient(358.27deg, rgba(100, 123, 100, 0.77) -118.86%, rgba(100, 123, 100, 0) 25.62%, rgba(100, 123, 100, 0) 98.53%);
+                padding: 78px 45px 72px;
+                border-radius: 8px;
+                box-shadow: 1px 1px 5px #d4d3d3;
+                cursor: pointer;
+                
+                .main-content-mid-logo{
+                    padding-bottom: 5.5px;
+                }
+                .card-header{
+                    color: #333333;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    line-height: 32.78px;
+                }
+                .card-text{
+                    color: #4F4F4F;
+                    line-height: 21.12px;
+                    font-weight: 500;
+
+                }
+            }
+
+            .rectangle-right{
+                position: absolute;
+                z-index: -1;
+                right: -70px;
+                top: 210px;
+                    @include responsive-lg{
+                        display: none;
+                    }
+            }
+        }
+        .main-content-mid-wrapper-bottom{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding-bottom: 80px;
+            position: relative;
+
+            @include responsive-xl{
+                display: flex;
+                flex-direction: column;
+                
+                .bot-img-wrapper{
+                    .main-content-bot-img{
+                        display: block;
+                        max-width: 100%;
+                        margin:0 auto;
+                        -webkit-box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+                        -moz-box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+                        box-shadow: 10px 10px 5px 0px rgba(219,219,219,1);
+                    }
+                    
+                    .bot-img-shadow{
+                        display: none;
+                    }
+
+                    }
+                    
+                }
+
+            .bot-img-shadow{
+                position: absolute;
+                top: 30px;
+                left: 50px;
+                z-index: -1;
+            }
+            .content-item-all{
+                padding: 105px 50px 105px 105px;
+                @include responsive-md{
+                padding: 40px 10px;
+                }
+                .all-items-yellow-text{
+                    font-size: 16px;
+                }
+                .all-items-header{
+                    font-size: 1.7rem;
+                }
+                .main-item-text{
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 21.12px;
+                    color: #4F4F4F;
+                    margin-bottom: 40px;
+                    margin-top: 0;
+                }
+                .green-btn{
+                    width: 300px;
+                    @include responsive-xsm{
+                        width: 250px;
+                    }
+                }
+            }
+        }
+
+    }
+    .main-content-carousel-wrapper{
+        
+        .main-content-carousel-header-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .main-content-bot-header{
+
+            }
+
+            .main-content-bot-arrow{
+                @include responsive-xl{
+                    display: none;
+                }
+                    img.arrow-svg-left, .arrow-svg-right {
+                        padding: 15px;
+                        border-radius: 50%;
+                        background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+                        linear-gradient(358.27deg, rgba(100, 123, 100, 0.77) -118.86%, rgba(100, 123, 100, 0) 25.62%, rgba(100, 123, 100, 0) 98.53%);
+                        box-shadow: 1px 1px 5px #d4d3d3;
+                    }
+            }
+        }
+
+        .main-content-wrapper{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5em;
+            overflow: visible;
+            padding-bottom: 170px;
+
+            @include responsive-xl{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .main-content-carousel-card{
+                background: rgb(236,236,236);
+                background: linear-gradient(0deg, rgba(236,236,236,1) 0%, rgba(253,253,252,1) 18%);
+                padding: 32px 32px 32px 40px;
+                border-radius: 8px;
+                box-shadow: 1px 1px 5px #d4d3d3;
+
+                .card-image-name{
+                    display: flex;
+                    @include responsive-xsm{
+                        display: block;
+                    }
+                    .card-img{
+                        max-width: 100%;
+                        @include responsive-xsm{
+                            padding-bottom: 10px;
+                        }
+                    }
+                    .card-content{
+                        h5{
+                            font-size: 1rem;
+                            font-weight: 500;
+                            line-height: 18.56px;
+                            color: #333333;
+                            margin: 0;
+
+                            @include responsive-xl{
+                                font-size: 1.7rem;
+                            }
+                        }
+                        h6{
+                            margin: 10px 0;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            line-height: 17.16px;
+                            color: #4F4F4F;
+                            @include responsive-xl{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+                .card-text{
+                    font-style: italic;
+                    @include responsive-xl{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+    }
+}

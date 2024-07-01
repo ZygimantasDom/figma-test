@@ -1,0 +1,174 @@
+
+
+@mixin responsive-xxl{
+    @media screen and (max-width: 1239px) {
+        @content;
+    }
+}
+
+@mixin responsive-xl{
+    @media screen and (max-width: 1099px) {
+        @content;
+    }
+}
+
+@mixin responsive-lg{
+    @media screen and (max-width: 990px) {
+        @content;
+    }
+}
+
+@mixin responsive-md{
+    @media screen and (max-width: 860px) {
+        @content;
+    }
+}
+
+@mixin responsive-sm{
+    @media screen and (max-width: 740px) {
+        @content;
+    }
+}
+
+@mixin responsive-xsm{
+    @media screen and (max-width: 599px) {
+        @content;
+    }
+}
+
+
+
+header{
+    .navbar-wrapper{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        color: #333333;
+
+        .navbar-logo-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-list-wrapper{
+            .nav-list{
+                display: flex;
+                gap: 3em;
+                align-items: center;
+
+                @include responsive-xl{
+                    gap: 1.875em;
+                }
+                @include responsive-sm{
+
+                }
+
+                a{
+                    text-decoration: none;
+                    color: #333333;
+                    font-weight: 500;
+
+                    @include responsive-xl{
+                        font-size: 0.875rem;
+                    }
+                }
+
+
+                a li{
+                    list-style-type: none;
+
+                    @include responsive-xsm{
+                        display: none;
+                    }
+                }
+
+                a li:hover{
+                    color: #66ac66;
+                }
+
+                .nav-list-item{
+                    border: 1px solid #0E70AF;
+                    padding: 10px 15px 10px 15px;
+                    border-radius: 3px;
+                    background:linear-gradient(#647b64, #66ac66);
+                    color: #FEFEFE;
+                }
+                .nav-list-item:hover{
+                    color: #14dc14;
+                }
+            }
+        }
+    }
+    .header-content-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        .header-item-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: url(./svg/Ellipse\ 116.svg);
+            background-repeat: no-repeat;
+            background-position-x: 150px;
+            background-position-y: 100px;
+
+            @include responsive-xxl{
+                background-position-y: 70px;
+            }
+
+            .header-content-name{
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 55.68px;
+                text-transform: uppercase;
+                color: #333333;
+                margin: 0;
+
+                @include responsive-xl{
+                    font-size: 2.375rem;
+                    line-height: 40.85px;
+                }
+                @include responsive-sm{
+                    font-size: 1.9rem;
+                    line-height: 35.85px;
+                }
+            }
+            .header-content-text{
+                font-size: 1.25rem;
+                line-height: 26.4px;
+                color: #4F4F4F;
+                margin-top: 24px;
+                margin-bottom: 32px;
+
+                @include responsive-xl{
+                    font-size: 1rem;
+                }
+                @include responsive-sm{
+                    font-size: 0.9rem;
+                    line-height: 20.2px;
+                }
+            }
+            .green-btn{
+                width: 350px;
+                @include responsive-md{
+                    width: 250px;
+                }
+                @include responsive-xsm{
+                    width: 190px;
+                }
+            }
+
+        }
+        .header-item-right{
+            text-align: center;
+
+            .header-image{
+                padding: 0 40px;
+                background-image: url(./svg/Ellipse\ 118.svg);
+                background-repeat: no-repeat;
+                background-position-y: 100px;
+                overflow-x: visible;
+            }
+        }
+    }
+}
